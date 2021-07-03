@@ -1,6 +1,6 @@
 @page {
     size: 210mm 297mm;
-    margin: 35mm 24.5mm 24.5mm;
+    margin: 35mm 27mm 29mm;
     @bottom-center {
         content: counter(page);
         font-family: 'Times New Roman', Times, serif;
@@ -9,16 +9,36 @@
 }
 
 body {
-    font-family: serif;
-    font-size: 3.5mm;
-    line-height: 6mm;
-    color:black;
+    column-count: 2;
+    column-gap: 7mm;
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-.twoCol{
-    column-count: 2;
-    column-gap: 7mm;
+p {
+    font-family: serif;
+    color:black;
+    font-size: 3.5mm;
+    line-height:1.7em;
+    margin: 0em;
+    text-align:justify;
+    text-indent: 1em;
+}
+/* 行頭一文字落とし */
+.indentation {
+    padding-left: 1em;
+    text-indent: -1em;
+}
+/* 行頭一文字落としの後続段落 */
+.indentation-following {
+    padding-left: 1em;
+    text-indent: 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-left: 1em;
+    font-family: serif;
+    /* punctuation-trim: all; */
+    /* font-feature-settings: "palt"; */
 }
 
 h2.col-span {
@@ -31,9 +51,9 @@ h2.col-span {
     page-break-before: always;
 }
 
-.author-spec {
-    position: relative;
+div.author-spec {
     column-span: all;
+    position: relative;
 }
 .author-col-span {
     text-align: right;
@@ -54,35 +74,9 @@ img.greet-photo {
     width: 8em;
 }
 
-
 h3 {
     font-size: 6mm;
     line-height: 1.2;
     padding-left: 6mm;
     text-indent: -6mm;
-
-
-}
-
-h1, h2, h3, h4, h5, h6 {
-    punctuation-trim: all;
-    margin-left: 1em;
-    font-family: serif;
-    font-feature-settings: "palt";
-}
-
-p {
-    margin: 0em;
-    text-align:justify;
-    text-indent: 1em;
-    punctuation-trim: start end adjacent;
-}
-.indentation {
-    padding-left: 1em;
-    text-indent: -1em;
-}
-
-.indentation-following {
-    padding-left: 1em;
-    text-indent: 1em;
 }
