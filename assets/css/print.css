@@ -80,50 +80,61 @@ h4 {
     text-indent: -1rem;
 }
 
-/* ========== カラムフロート start ========== */
+/* ========== flex container start ========== */
 .col-span {
+    /* 1段落にする */
     float-reference: column;
     float: top;
     column-span: all;
     page-break-before: always;
-    margin-bottom: 0.75rem;
+    /* 親要素に指定 */
+    height: 155px;
+    display: flex;
+    flex-direction: column;
 }
-h2 {
-    margin: 52px 1rem 52px;
-    font-size: 2rem;
-    line-height: 23px;
-    font-weight: bold;
-}
-/* h2で設定している1行は、場合によって上の余白が出てしまう。それを回避させている。 */
-.one-line {
-    margin: 44px 1rem 44px;
-}
-/* h2の2行用。目測手作業で適宜設定した数値。何の裏付けもなし。 */
-.two-line {
-    margin: 26px 1rem 26px;
-    line-height: 30px;
-
-}
-div.author-spec {
+.FA1-title {
     position: relative;
+    height: 100px;
+    margin: 0 9rem 0 1rem ;
+}
+.FA1-title h2 {
+    position: absolute;
+    top: 65%;
+    left: 0%;
+    transform: translate(0%, -50%);      
+    font-size: 2rem;
+    line-height: 1.2;
+    font-weight: bold;
+    font-feature-settings: "palt";
 }
 .author {
+    height: 40px;
+    position: relative;
+    font-feature-settings: "palt";
+}
+.author .spec {
+    position: absolute;
+    margin: 0 9rem;
+    bottom: 0%;
+    right: 0%;
+    transform: translate(0%, 0%);    
     text-align: right;
-    margin-right: 9rem;
     font-size: 0.8rem;
     line-height: 1.3;
     font-family: YakuCaltMincho, YuMincho, Yu Mincho, serif;
 }
-.author-name {
+.author .name {
     font-size: 1.1rem;
     font-family: YakuCaltGothic, YuGothic, Yu Gothic, sans-serif;
     font-weight: bold;
 }
-img.greet-photo {
+.author img {
     position: absolute;
-    right: 1rem;
-    bottom: 0.25rem;
     width: 8rem;
+    margin: 0;
+    bottom: 0%;
+    right: 0%;
+    transform: translate(0%, 0%);
 }
 hr.clearfix {
     clear: both;
@@ -132,20 +143,48 @@ hr.clearfix {
     margin: -1px;
     overflow: auto;
 }
-/* ========== カラムフロート end ========== */
+/* ========== flex container end ========== */
 
 /* ========== 目　次 ========== */
-.container {
+nav {
+    /* 1段落にする */
+    float-reference: column;
+    float: top;
+    column-span: all;
+    page-break-before: always;
+}
+.cntents-container {
     display: flex;
     flex-direction: column;
 }
-.item {
-    background-color: aquamarine;
+.contents-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px 20px 10px;
+    padding: 10px 40px;
+    font-family: YakuCaltGothic, YuGothic, Yu Gothic, sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: left;
+    font-feature-settings: "palt";
+    color: #3F4E5F;
+    border: 1px solid #0F7FF9;
+    background-color: white;
 }
-a.contents {
-    display: block;
+.contents-item a.title {
+    text-decoration: none;
+    font-family: YakuCaltMincho, YuMincho, Yu Mincho, serif;;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #3F4E5F;
 }
 .contents-photo {
     width: 3rem;
     display: none;
+}
+nav h2 {
+    margin: 4rem 0 3rem;
+    font-size: 2.5rem;
+    text-align: center;
 }
