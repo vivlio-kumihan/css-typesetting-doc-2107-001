@@ -89,7 +89,7 @@ h4 {
 }
 .FA1-title h2 {
     position: absolute;
-    top: 65%;
+    top: 35%;
     left: 0%;
     transform: translate(0%, -50%);      
     font-size: 2rem;
@@ -178,13 +178,13 @@ nav h2 {
     text-align: center;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     body {
         width: 95%;
     }
     p {
-        font-size: 0.8rem;
-        line-height: 1.5;
+        font-size: 0.9rem;
+        line-height: 1.6;
     }
     .contents-item {
         display: flex;
@@ -194,11 +194,34 @@ nav h2 {
         padding: 10px 40px;
         font-size: 1.2rem;
     }
+
+    nav h2 {
+        margin: 2rem 0 1rem;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .FA1-title {
+        /* height: 100px; */
+        margin: 0 0 0 1rem ;
+    }
+    .FA1-title h2 {
+        font-size: 1.5rem;
+    }
+    .author .spec {
+        margin: 0;
+        text-align: right;
+        font-size: 0.8rem;
+        line-height: 1.3;
+    }
     .author img {
         display: none;
     }
+    h3 {
+        margin: 10px 0 10px 1rem;
+        font-size: 1.1rem;
+    }
 }
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
     body {
         width: 90%;
     }
@@ -214,15 +237,16 @@ nav h2 {
         padding: 10px 40px;
         font-size: 1.2rem;
     }
-}
-@media (min-width: 960px) {
+} */
+/* @media (max-width: 960px) {
     body {
         width: 60%;
     }
     p {
         font-size: 0.9rem;
     }
-}
+
+} */
 @media (min-width: 1280px) {
     body {
         width: 50%;

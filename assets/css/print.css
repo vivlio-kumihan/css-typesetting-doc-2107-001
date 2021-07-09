@@ -153,14 +153,20 @@ nav {
     column-span: all;
     page-break-before: always;
 }
+nav h2 {
+    margin: 4rem 0 3rem;
+    font-size: 2.5rem;
+    text-align: center;
+}
 .cntents-container {
     display: flex;
     flex-direction: column;
 }
 .contents-item {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
+
     margin: 10px 20px 10px;
     padding: 10px 40px;
     font-family: YakuCaltGothic, YuGothic, Yu Gothic, sans-serif;
@@ -169,10 +175,11 @@ nav {
     text-align: left;
     font-feature-settings: "palt";
     color: #3F4E5F;
+    
     border: 1px solid #0F7FF9;
     background-color: white;
 }
-.contents-item a.title {
+.contents-title a {
     text-decoration: none;
     font-family: YakuCaltMincho, YuMincho, Yu Mincho, serif;;
     font-size: 1.5rem;
@@ -182,9 +189,4 @@ nav {
 .contents-photo {
     width: 3rem;
     display: none;
-}
-nav h2 {
-    margin: 4rem 0 3rem;
-    font-size: 2.5rem;
-    text-align: center;
 }
