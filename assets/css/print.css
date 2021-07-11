@@ -59,6 +59,11 @@ p {
     letter-spacing: 0.5rem;
 }
 
+/* ========== ページの先頭へ ========== */
+.back-to-top {
+    display: none;
+}
+
 /* ========== 見出し ========== */
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
@@ -168,7 +173,7 @@ nav h2 {
     justify-content: space-between;
 
     margin: 10px 20px 10px;
-    padding: 10px 40px;
+    padding: 20px 40px;
     font-family: YakuCaltGothic, YuGothic, Yu Gothic, sans-serif;
     font-size: 1.2rem;
     font-weight: bold;
@@ -186,7 +191,6 @@ nav h2 {
     font-weight: bold;
     color: #3F4E5F;
 }
-.contents-photo {
-    width: 3rem;
+.contents-item img {
     display: none;
 }

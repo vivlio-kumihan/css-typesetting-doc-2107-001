@@ -47,6 +47,18 @@ p {
     letter-spacing: 0.5rem;
 }
 
+/* ========== ページの先頭へ ========== */
+.back-to-top {
+    text-align: right;
+    font-family: YakuCaltGothic, YuGothic, Yu Gothic, sans-serif;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+.back-to-top a {
+    text-decoration: none;
+    color: cornflowerblue;
+}
+
 /* ========== 見出し ========== */
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
@@ -79,6 +91,7 @@ h4 {
     page-break-before: always;
     /* 親要素に指定 */
     height: 155px;
+    
     display: flex;
     flex-direction: column;
 }
@@ -138,67 +151,63 @@ hr.clearfix {
 /* ========== 目　次 ========== */
 nav {
     /* 1段落にする */
-    float-reference: column;
+    /* float-reference: column;
     float: top;
     column-span: all;
-    page-break-before: always;
+    page-break-before: always; */
 }
 .cntents-container {
     display: flex;
     flex-direction: column;
-}
-.contents-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 10px 20px 10px;
-    padding: 10px 40px;
-    font-family: YakuCaltGothic, YuGothic, Yu Gothic, sans-serif;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-align: left;
-    font-feature-settings: "palt";
-    color: #3F4E5F;
-    border: 1px solid #0F7FF9;
-}
-.contents-item a.title {
-    text-decoration: none;
-    font-family: YakuCaltMincho, YuMincho, Yu Mincho, serif;;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #3F4E5F;
-}
-.contents-photo {
-    width: 3rem;
-    display: none;
 }
 nav h2 {
     margin: 4rem 0 3rem;
     font-size: 2.5rem;
     text-align: center;
 }
+.contents-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 20px 10px;
+    padding: 20px 40px;
+    font-family: YakuCaltGothic, YuGothic, Yu Gothic, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    font-weight: bold;
+    text-align: left;
+    font-feature-settings: "palt";
+    color: #3F4E5F;
+    border: 1px solid #0F7FF9;
+}
+.contents-item a {
+    text-decoration: none;
+    font-family: YakuCaltMincho, YuMincho, Yu Mincho, serif;;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #3F4E5F;
+}
+.contents-item img {
+    display: none;
+}
 
+
+/* ========== スマートフォンの表示 ========== */
 @media (max-width: 600px) {
     body {
         width: 95%;
     }
+
     p {
         font-size: 0.9rem;
         line-height: 1.6;
     }
-    .contents-item {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        margin: 10px 20px 10px;
-        padding: 10px 40px;
-        font-size: 1.2rem;
-    }
-
-    nav h2 {
-        margin: 2rem 0 1rem;
-        font-size: 1.5rem;
-        text-align: center;
+    
+    .col-span {
+        margin-top: 40px;
+        padding-top: 30px;
+        height: 100px;
+        border-top: 1px dotted black; 
     }
     .FA1-title {
         /* height: 100px; */
@@ -219,6 +228,39 @@ nav h2 {
     h3 {
         margin: 10px 0 10px 1rem;
         font-size: 1.1rem;
+    }
+
+    /* 目次 */
+    nav h2 {
+        margin: 2rem 0 1rem;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .contents-item {
+        flex-direction: column;
+        justify-content: center;
+
+        position: relative;
+
+        margin: 0.5rem 0;
+        padding: 0.5rem 0.5rem 0.5rem 5rem ;
+        height: 90px;
+        font-size: 1rem;
+    }
+    .contents-item .contents-author {
+        margin-top: 0.5rem;
+    }
+    .contents-item a {
+        font-size: 1.2rem;
+    }
+    .contents-item img {
+        display: block;
+        width: 4rem;
+        position: absolute;
+        margin: 0;
+        top: 50%;
+        left: 0%;
+        transform: translate(0%, -50%);
     }
 }
 /* @media (max-width: 600px) {
