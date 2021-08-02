@@ -194,7 +194,7 @@ nav h2 {
 
 
 /* ========== スマートフォンの表示 ========== */
-@media (max-width: 600px) {
+@media (max-width: 479px) {
     body {
         width: 95%;
     }
@@ -265,7 +265,7 @@ nav h2 {
     }
 }
 
-/* @media (max-width: 600px) {
+@media screen and (min-width:480px) and (max-width:1025px) {
     body {
         width: 90%;
     }
@@ -281,17 +281,9 @@ nav h2 {
         padding: 10px 40px;
         font-size: 1.2rem;
     }
-} */
-/* @media (max-width: 960px) {
-    body {
-        width: 60%;
-    }
-    p {
-        font-size: 0.9rem;
-    }
+}
 
-} */
-@media (min-width: 1280px) {
+@media (min-width: 1026px) {
     body {
         width: 50%;
     }
