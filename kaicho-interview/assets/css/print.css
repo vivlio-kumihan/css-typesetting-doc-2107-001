@@ -4,10 +4,10 @@ html {
 }
 
 body {
-    column-count: 3;
+    column-count: 1;
     column-gap: 2rem;
     column-fill: balance;
-    background-color: rgba(0, 0, 0, 0.05);
+    /* background-color: rgba(0, 0, 0, 0.05); */
 }
 
 @page {
@@ -20,17 +20,30 @@ body {
     }
 }
 
-.title-back {
-    /* タイトルバック用のスペースを確保してイメージを配置する。 */
+/* タイトルバック用のスペースを確保してイメージを配置する。 */
+/* .title-back {
     float: left;
     float-reference: column;
     column-span: all;
     page-break-before: always;
+} */
+
+.title-back {
+    background: red;
 }
 
-img {
-    width: 49rem;
-    height: 460px;
+img.main {
+    position: relative;
+    top: -38mm;
+    left: -22.25mm;
+    width: 213mm;
+}
+
+img.top-title {
+    position: absolute;
+    top: -38mm;
+    left: -22.25mm;
+    width: mm;
 }
 
 
