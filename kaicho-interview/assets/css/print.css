@@ -4,32 +4,58 @@ html {
 }
 
 body {
-    column-count: 1;
+    column-count: 3;
     column-gap: 2rem;
     column-fill: balance;
-    /* background-color: rgba(0, 0, 0, 0.05); */
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 @page {
     size: 210mm 297mm;
     margin: 35mm 19.25mm 26mm;
-    @bottom-center {
+}
+
+@page :right {
+    @bottom-right {
         content: counter(page);
+        margin-right: 2rem;
+        font-family: YakuCaltMincho, YuMincho, Yu Mincho, serif;
+        font-size: 0.85em;
+    }
+}
+
+@page :left {
+    @bottom-left {
+        content: counter(page);
+        margin-left: 2rem;
         font-family: YakuCaltMincho, YuMincho, Yu Mincho, serif;
         font-size: 0.85em;
     }
 }
 
 /* タイトルバック用のスペースを確保してイメージを配置する。 */
-/* .title-back {
+/* 高さの指定に意味はあるのか？ */
+.title-back {
     float: left;
     float-reference: column;
     column-span: all;
     page-break-before: always;
+    width: 171.5mm;
+    height: 529px;
+}
+/* 擬似要素でやると、次の行の見出しのtop-marginが効かない。下のhrを入れるやり方だとtop-marginは効く。擬似要素を使って解決できないのか？ */
+/* .title-back::after {
+    content: "";
+    display: block;
+    clear: both;
+    overflow: auto;
 } */
-
-.title-back {
-    background: red;
+hr.clearfix {
+    clear: both;
+    border: none;
+    padding: 1px;
+    margin: -1px;
+    overflow: auto;
 }
 
 img.main {
@@ -42,13 +68,12 @@ img.main {
 img.top-title {
     position: absolute;
     top: -38mm;
-    left: -22.25mm;
-    width: mm;
+    left: 0mm;
+    width: 50mm;
 }
 
-
 p {
-    margin: 0rem;
+    margin: 0;
     font-family: YakuCaltMincho, YuMincho, Yu Mincho, serif;
     color: black;
     text-align: justify;
@@ -96,128 +121,25 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
     font-family: YuMincho Demibold, Yu Mincho Demibold, serif;
     font-feature-settings: "palt";
+    line-height: 1.5;
 }
 
-h3 {
-    margin: 11.5px 0 11.5px 1rem;
-    font-size: 1.2rem;
-    padding-left: 1rem;
-    text-indent: -1rem;
-}
-
-h4 {
-    font-size: 1rem;
-    line-height: 23px;
-    padding-left: 1rem;
-    text-indent: -1rem;
-}
-
-/* ========== flex container start ========== */
-.col-span {
-    /* 1段落にする */
-    float-reference: column;
-    float: top;
-    column-span: all;
-    page-break-before: always;
-    /* 親要素に指定 */
-    height: 155px;
-    display: flex;
-    flex-direction: column;
-}
-.FA1-title {
-    position: relative;
-    height: 100px;
-    margin: 0 9rem 0 1rem ;
-}
-.FA1-title h2 {
-    position: absolute;
-    top: 65%;
-    left: 0%;
-    transform: translate(0%, -50%);      
-    font-size: 2rem;
-    line-height: 1.2;
-    font-weight: bold;
-    font-feature-settings: "palt";
-}
-.author {
-    height: 40px;
-    position: relative;
-    font-feature-settings: "palt";
-}
-.author .spec {
-    position: absolute;
-    margin: 0 9rem;
-    bottom: 0%;
-    right: 0%;
-    transform: translate(0%, 0%);    
-    text-align: right;
-    font-size: 0.8rem;
-    line-height: 1.3;
-    font-family: YakuCaltMincho, YuMincho, Yu Mincho, serif;
-}
-.author .name {
-    font-size: 1.1rem;
-    font-family: YakuCaltGothic, YuGothic, Yu Gothic, sans-serif;
-    font-weight: bold;
-}
-.author img {
-    position: absolute;
-    width: 8rem;
-    margin: 0;
-    bottom: 0%;
-    right: 0%;
-    transform: translate(0%, 0%);
-}
-hr.clearfix {
-    clear: both;
-    border: none;
-    padding: 1px;
-    margin: -1px;
-    overflow: auto;
-}
-/* ========== flex container end ========== */
-
-/* ========== 目　次 ========== */
-nav {
-    /* 1段落にする */
-    float-reference: column;
-    float: top;
-    column-span: all;
-    page-break-before: always;
-}
-nav h2 {
-    margin: 4rem 0 3rem;
-    font-size: 2.5rem;
-    text-align: center;
-}
-.cntents-container {
-    display: flex;
-    flex-direction: column;
-}
-.contents-item {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    margin: 10px 20px 10px;
-    padding: 20px 40px;
-    font-family: YakuCaltGothic, YuGothic, Yu Gothic, sans-serif;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-align: left;
-    font-feature-settings: "palt";
-    color: #3F4E5F;
-    
-    border: 1px solid #0F7FF9;
-    background-color: white;
-}
-.contents-title a {
-    text-decoration: none;
-    font-family: YakuCaltMincho, YuMincho, Yu Mincho, serif;;
+h2 {
     font-size: 1.5rem;
-    font-weight: bold;
-    color: #3F4E5F;
+    margin: 23px 0;
+    line-height: 1.2;
+
 }
-.contents-item img {
-    display: none;
+
+h5 {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-left: 3em;
+    text-indent: -1em;
+}
+h5.question::before {
+    content: "―";
+    display: inline-block;
+    transform: scale(2, 1);
+    margin-right: 1em;
 }
