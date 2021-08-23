@@ -17,7 +17,7 @@ body {
 
 @page :right {
     @top-right {
-        content: url("assets/img/img_header-right.svg");
+        content: url("./assets/img/img_header-right.svg");
         border-bottom: 1px solid black;
         margin: 0 -22.25mm 4rem -19.25mm;
     }
@@ -31,7 +31,7 @@ body {
 
 @page :left {
     @top-left {
-        content: url("assets/img/img_header-left.svg");
+        content: url("./assets/img/img_header-left.svg");
         border-bottom: 1px solid black;
         margin: 0 -19.25mm 4rem -22.25mm;
     }
@@ -136,9 +136,8 @@ h1, h2, h3, h4, h5, h6 {
 
 h2 {
     font-size: 1.5rem;
-    margin: 23px 0;
+    margin: 18px 0;
     line-height: 1.2;
-
 }
 
 h5 {
