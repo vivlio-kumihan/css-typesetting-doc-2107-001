@@ -51,7 +51,8 @@ body {
     column-span: all;
     page-break-before: always;
     width: 171.5mm;
-    height: 529px;
+    height: 506px;
+    margin-bottom: 2rem;
 }
 /* 擬似要素でやると、次の行の見出しのtop-marginが効かない。下のhrを入れるやり方だとtop-marginは効く。擬似要素を使って解決できないのか？ */
 /* .title-back::after {
@@ -69,7 +70,7 @@ hr.clearfix {
 }
 
 img.main {
-    position: relative;
+    position: absolute;
     top: -38mm;
     left: -22.25mm;
     width: 213mm;
@@ -117,6 +118,9 @@ p {
 .letter-spce-7percent {
     letter-spacing: -0.07rem;
 }
+.letter-spce-10percent {
+    letter-spacing: -0.1rem;
+}
 .letter-spce-2bu {
     letter-spacing: 0.5rem;
 }
@@ -136,7 +140,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h2 {
     font-size: 1.5rem;
-    margin: 18px 0;
+    margin: 11.5px 0 11.5px 1rem;
     line-height: 1.2;
 }
 
@@ -145,6 +149,7 @@ h5 {
     font-weight: bold;
     margin-left: 3em;
     text-indent: -1em;
+    line-height: 23px;
 }
 h5.question::before {
     content: "―";
