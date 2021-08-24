@@ -15,6 +15,14 @@ body {
     margin: 35mm 19.25mm 26mm;
 }
 
+/* この画像（svg）をレイアウトしたい。 */
+/* 
+./assets/img/img_header-left.svg"
+./assets/img/img_header-right.svg"
+./assets/img/img_nombre-left.svg"
+./assets/img/img_nombre-right.svg"
+*/
+
 @page :right {
     @top-right {
         content: url("./assets/img/img_header-right.svg");
