@@ -25,9 +25,29 @@ body {
 
 @page :right {
     @top-right {
-        content: url("./assets/img/img_header-right.svg");
-        border-bottom: 1px solid black;
-        margin: 0 -22.25mm 4rem -19.25mm;
+        content: url("../img/img_header-right.svg");
+        width: 50mm;
+        margin: 12mm -10mm 4rem 0;
+        z-index: -1;
+        background: red;
+    }
+    @left-top {
+        background: red;
+    }
+    @top-left-corner {
+        background: red;
+    }
+    @left-top {
+        background: red;
+    }
+    @left-middle {
+        background: red;
+    }
+    @left-bottom {
+        background: red;
+    }
+    @bottom-left-corner {
+        background: red;
     }
     @bottom-right {
         content: counter(page);
@@ -39,7 +59,7 @@ body {
 
 @page :left {
     @top-left {
-        content: url("./assets/img/img_header-left.svg");
+        content: url("../img/img_header-left.svg");
         border-bottom: 1px solid black;
         margin: 0 -19.25mm 4rem -22.25mm;
     }
