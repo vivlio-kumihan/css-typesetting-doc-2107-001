@@ -12,62 +12,63 @@ body {
 
 @page {
     size: 210mm 297mm;
-    margin: 35mm 19.25mm 26mm;
+    margin: 45.5mm 19.25mm 69px;
 }
-
-/* この画像（svg）をレイアウトしたい。 */
-/* 
-./assets/img/img_header-left.svg"
-./assets/img/img_header-right.svg"
-./assets/img/img_nombre-left.svg"
-./assets/img/img_nombre-right.svg"
-*/
 
 @page :right {
     @top-right {
         content: url("../img/img_header-right.svg");
         width: 50mm;
-        margin: 12mm -10mm 4rem 0;
+        margin: 12mm -10mm 3rem 0;
         z-index: -1;
-        background: red;
     }
-    @left-top {
-        background: red;
+    @top-center {
+        content: "";
+        margin-bottom: 5rem;
+        border-bottom: 1px solid black ;
+        width: 210mm;
+        z-index: -1;
     }
-    @top-left-corner {
-        background: red;
-    }
-    @left-top {
-        background: red;
-    }
-    @left-middle {
-        background: red;
-    }
-    @left-bottom {
-        background: red;
-    }
-    @bottom-left-corner {
-        background: red;
+    @bottom-center {
+        content: url("../../../../assets/img/img_nombre-right.svg");
+        width: 50mm;
+        margin-right: -92mm;
     }
     @bottom-right {
         content: counter(page);
-        margin-right: 2rem;
         font-family: YakuCaltMincho, YuMincho, Yu Mincho, serif;
         font-size: 0.85em;
+        margin-right: 3rem;
+        
+        
     }
 }
 
 @page :left {
     @top-left {
         content: url("../img/img_header-left.svg");
-        border-bottom: 1px solid black;
-        margin: 0 -19.25mm 4rem -22.25mm;
+        width: 71mm;
+        margin: 0 0 -1.25rem -21.25mm;
+        z-index: 1;
+    }
+    @top-center {
+        content: "";
+        margin-bottom: 5rem;
+        border-bottom: 1px solid black ;
+        width: 210mm;
+        z-index: -1;
+    }
+    @bottom-center {
+        content: url("../../../../assets/img/img_nombre-left.svg");
+        width: 50mm;
+        margin-left: -90mm;
     }
     @bottom-left {
         content: counter(page);
-        margin-left: 2rem;
         font-family: YakuCaltMincho, YuMincho, Yu Mincho, serif;
         font-size: 0.85em;
+        margin-left: 3rem;
+        
     }
 }
 
@@ -79,7 +80,7 @@ body {
     column-span: all;
     page-break-before: always;
     width: 171.5mm;
-    height: 506px;
+    height: 480px;
     margin-bottom: 2rem;
 }
 /* 擬似要素でやると、次の行の見出しのtop-marginが効かない。下のhrを入れるやり方だとtop-marginは効く。擬似要素を使って解決できないのか？ */
@@ -99,18 +100,33 @@ hr.clearfix {
 
 img.main {
     position: absolute;
-    top: -38mm;
+    top: -47.5mm;
     left: -22.25mm;
     width: 213mm;
 }
 
 img.top-title {
     position: absolute;
-    top: -38mm;
+    top: -47.5mm;
     left: 0mm;
     width: 50mm;
 }
 
+.first-image {
+    float: left;
+    float-reference: column;
+    column-span: all;
+    page-break-before: always;
+    width: 171.5mm;
+    height: 434px;
+    margin-bottom: 2rem;
+}
+img.first {
+    width: 171.5mm;
+    position: absolute;
+    top: -18mm;
+
+}
 p {
     margin: 0;
     font-family: YakuCaltMincho, YuMincho, Yu Mincho, serif;

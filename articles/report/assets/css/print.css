@@ -4,22 +4,24 @@ html {
 }
 
 body {
-    column-count: 3;
+    column-count: 2;
     column-gap: 2rem;
     column-fill: balance;
     background-color: rgba(0, 0, 0, 0.05);
 }
 
+/* ========== ページ ========== */
 @page {
     size: 210mm 297mm;
-    margin: 35mm 19.25mm 26mm;
+    margin: 35mm 26.25mm 26mm;
 }
 
 @page :right {
     @top-right {
-        content: url("./assets/img/img_header-right.svg");
-        border-bottom: 1px solid black;
-        margin: 0 -22.25mm 4rem -19.25mm;
+        content: "";
+        border-right: 2.5mm solid black;
+        border-left: 0.15mm solid black;
+        margin: 0 0 2rem;
     }
     @bottom-right {
         content: counter(page);
@@ -31,9 +33,10 @@ body {
 
 @page :left {
     @top-left {
-        content: url("./assets/img/img_header-left.svg");
-        border-bottom: 1px solid black;
-        margin: 0 -19.25mm 4rem -22.25mm;
+        content: "";
+        border-right: 0.15mm solid black;
+        border-left: 2.5mm solid black;
+        margin: 0 0 2rem;
     }
     @bottom-left {
         content: counter(page);
@@ -41,53 +44,6 @@ body {
         font-family: YakuCaltMincho, YuMincho, Yu Mincho, serif;
         font-size: 0.85em;
     }
-}
-
-/* タイトルバック用のスペースを確保してイメージを配置する。 */
-/* 高さの指定に意味はあるのか？ */
-.title-back {
-    float: left;
-    float-reference: column;
-    column-span: all;
-    page-break-before: always;
-    width: 171.5mm;
-    height: 529px;
-}
-/* 擬似要素でやると、次の行の見出しのtop-marginが効かない。下のhrを入れるやり方だとtop-marginは効く。擬似要素を使って解決できないのか？ */
-/* .title-back::after {
-    content: "";
-    display: block;
-    clear: both;
-    overflow: auto;
-} */
-hr.clearfix {
-    clear: both;
-    border: none;
-    padding: 1px;
-    margin: -1px;
-    overflow: auto;
-}
-
-img.main {
-    position: relative;
-    top: -38mm;
-    left: -22.25mm;
-    width: 213mm;
-}
-
-img.top-title {
-    position: absolute;
-    top: -38mm;
-    left: 0mm;
-    width: 50mm;
-}
-
-p {
-    margin: 0;
-    font-family: YakuCaltMincho, YuMincho, Yu Mincho, serif;
-    color: black;
-    text-align: justify;
-    text-indent: 1rem;
 }
 
 /* ========== インデント ========== */
@@ -131,24 +87,60 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
     font-family: YuMincho Demibold, Yu Mincho Demibold, serif;
     font-feature-settings: "palt";
-    line-height: 1.5;
 }
 
-h2 {
-    font-size: 1.5rem;
-    margin: 18px 0;
+h1 {
+    font-size: 1.7erm;
     line-height: 1.2;
+    margin: 2rem 2rem 0.5rem;
 }
 
-h5 {
-    font-size: 0.9rem;
-    font-weight: bold;
-    margin-left: 3em;
-    text-indent: -1em;
+/* ========== タイトル ========== */
+/* タイトルバック用のスペースを確保してイメージを配置する。 */
+/* 高さの指定に意味はあるのか？ */
+.title-back {
+    float-reference: column;
+    column-span: all;
+    page-break-before: always;
+    width: 171.5mm;
 }
-h5.question::before {
-    content: "―";
-    display: inline-block;
-    transform: scale(2, 1);
-    margin-right: 1em;
+.report-title {
+    float: left;
+    float-reference: column;
+    column-span: all;
+    page-break-before: always;
+    width: 157.5mm;
+}
+.title-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.15mm solid black;
+}
+.org {
+    flex-grow: 2;
+    margin-left: 0.15mm;
+}
+.org::before {
+    content: "■　";
+    color: rgba(0, 0, 0, 0.25);
+}
+.place {
+    margin-right: 2rem;
+}
+.place::before {
+    content: "　";
+}
+.catch-copy {
+    font-weight: bold;
+}
+
+/* ========== 本文 ========== */
+p {
+    margin: 0;
+    font-family: YakuCaltMincho, YuMincho, Yu Mincho, serif;
+    color: black;
+    text-align: justify;
+    text-indent: 1rem;
 }
