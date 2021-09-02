@@ -13,6 +13,7 @@ body {
 @page {
     size: 210mm 297mm;
     margin: 45.5mm 19.25mm 69px;
+    marks: crop;
 }
 
 @page :right {
@@ -24,9 +25,10 @@ body {
     }
     @top-center {
         content: "";
+        margin-left: 3mm;
         margin-bottom: 5rem;
-        border-bottom: 1px solid black ;
-        width: 210mm;
+        border-bottom: 1px solid black;
+        width: 213mm;
         z-index: -1;
     }
     @bottom-center {
@@ -53,9 +55,10 @@ body {
     }
     @top-center {
         content: "";
+        margin-right: 3mm;
         margin-bottom: 5rem;
         border-bottom: 1px solid black ;
-        width: 210mm;
+        width: 213mm;
         z-index: -1;
     }
     @bottom-center {
