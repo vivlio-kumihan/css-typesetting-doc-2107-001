@@ -7,12 +7,12 @@ body {
     column-count: 3;
     column-gap: 2rem;
     column-fill: balance;
-    background-color: rgba(0, 0, 0, 0.05);
+    /* background-color: rgba(0, 0, 0, 0.05); */
 }
 
 @page {
     size: 210mm 297mm;
-    margin: 45.5mm 19.25mm 69px;
+    margin: 45.5mm 19.25mm 25.5mm;
     marks: crop;
 }
 
@@ -41,8 +41,6 @@ body {
         font-family: YakuCaltMincho, YuMincho, Yu Mincho, serif;
         font-size: 0.85em;
         margin-right: 3rem;
-        
-        
     }
 }
 
@@ -86,25 +84,11 @@ body {
     height: 480px;
     margin-bottom: 2rem;
 }
-/* 擬似要素でやると、次の行の見出しのtop-marginが効かない。下のhrを入れるやり方だとtop-marginは効く。擬似要素を使って解決できないのか？ */
-/* .title-back::after {
-    content: "";
-    display: block;
-    clear: both;
-    overflow: auto;
-} */
-hr.clearfix {
-    clear: both;
-    border: none;
-    padding: 1px;
-    margin: -1px;
-    overflow: auto;
-}
 
 img.main {
     position: absolute;
     top: -47.5mm;
-    left: -22.25mm;
+    left: -19.25mm;
     width: 213mm;
 }
 
@@ -115,27 +99,47 @@ img.top-title {
     width: 50mm;
 }
 
+hr.clearfix {
+    clear: both;
+    border: none;
+    padding: 1px;
+    margin: -1px;
+    overflow: auto;
+}
+
 .first-image {
     float: left;
     float-reference: column;
     column-span: all;
-    /* page-break-before: always; */
     width: 171.5mm;
     height: 434px;
     margin-bottom: 2rem;
 }
 img.first {
-    width: 171.5mm;
     position: absolute;
+    width: 171.5mm;
     top: -18mm;
-
 }
-p {
-    margin: 0;
-    font-family: YakuCaltMincho, YuMincho, Yu Mincho, serif;
-    color: black;
-    text-align: justify;
-    text-indent: 1rem;
+
+.second-image {
+    float: left;
+    float-reference: column;
+    column-span: all;
+    width: 171.5mm;
+    height: 414px;
+    margin-bottom: 2rem;
+}
+img.second {
+    position: absolute;
+    width: 171.5mm;
+    height: 414px;
+    background-size: contain;
+    /* transform: translate(0%, 0%); */
+}
+
+/* ========== 改段・改ページ ========== */
+.kai-dan {
+    break-before: column
 }
 
 /* ========== インデント ========== */
@@ -183,22 +187,32 @@ h1, h2, h3, h4, h5, h6 {
     font-family: YuMincho Demibold, Yu Mincho Demibold, serif;
     font-feature-settings: "palt";
     line-height: 1.5;
+    break-after: auto;
 }
 
 h2 {
     font-size: 1.5rem;
-    margin: 11.5px 0 11.5px 1rem;
+    padding: 11.5px 0 11.5px 1rem;
     line-height: 1.2;
 }
 
-h5 {
+p {
+    margin: 0;
+    font-family: YakuCaltMincho, YuMincho, Yu Mincho, serif;
+    color: black;
+    text-align: justify;
+    text-indent: 1rem;
+}
+
+p.question {
     font-size: 0.9rem;
     font-weight: bold;
     margin-left: 3em;
     text-indent: -1em;
     line-height: 23px;
+    break-after: auto;
 }
-h5.question::before {
+p.question::before {
     content: "―";
     display: inline-block;
     transform: scale(2, 1);
