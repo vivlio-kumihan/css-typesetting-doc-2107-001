@@ -13,7 +13,7 @@ body {
 @page {
     size: 210mm 297mm;
     margin: 45.5mm 19.25mm 25.5mm;
-    marks: crop;
+    /* marks: crop; */
 }
 
 @page :right {
@@ -217,4 +217,9 @@ p.question::before {
     display: inline-block;
     transform: scale(2, 1);
     margin-right: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
